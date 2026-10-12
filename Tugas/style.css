@@ -1,0 +1,241 @@
+:root {
+  --paper: #f2f6f4;     
+  --white: #ffffff;
+  --ink: #1b2b2a;        
+  --muted: #566866;     
+  --teal: #0e5a58;       
+  --teal-dark: #093f3e;  
+  --amber: #efb94a;      
+  --line: #c9d6d2;       
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: "Young Serif", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 1.85rem; }
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 62ch;          
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a { color: var(--teal); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;           
+}
+
+.section {
+  padding: 3.5rem 1.5rem;   
+}
+
+.section h2 {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 3px solid var(--amber);    
+}
+
+.two-col,
+.contact-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.two-col     { grid-template-columns: 1fr 1fr; }
+.contact-grid { grid-template-columns: 3fr 2fr; }
+
+.col-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--teal);
+}
+
+#profile {
+  padding: 2rem 1.5rem 3.5rem;
+  color: var(--white);
+  background-color: var(--teal);
+}
+
+#skills {
+  background-color: var(--white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+#profile a:focus-visible {
+  outline-color: var(--white);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.nav a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover { border-bottom-color: var(--amber); }
+
+.intro {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 6px solid var(--amber);
+  border-radius: 36px 36px 36px 6px;
+  background-color: #d6e4e1;
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: var(--amber);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.entry {
+  margin-bottom: 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--teal);
+}
+
+.date {
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tags li {
+  padding: 0.35rem 0.95rem;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  background-color: var(--paper);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.tags.soft li { border-color: var(--amber); }
+
+.field { margin-bottom: 1.1rem; }
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+
+input:focus,
+textarea:focus { border-color: var(--teal); }
+
+.btn {
+  padding: 0.75rem 1.6rem;
+  border: 2px solid var(--teal);
+  border-radius: 8px;
+  background-color: var(--teal);
+  color: var(--white);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--teal-dark);
+  background-color: var(--teal-dark);
+}
+
+.links li { margin-bottom: 0.5rem; }
+
+footer {
+  padding: 1.5rem;
+  background-color: var(--ink);
+  color: #d5e2df;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .intro,
+  .two-col,
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .nav { justify-content: flex-start; }
+  h1 { font-size: 2.1rem; }
+  .photo { width: 160px; height: 160px; }
+}
